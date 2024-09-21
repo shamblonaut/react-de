@@ -41,7 +41,8 @@ export default function Explorer() {
         style={{
           flex: "1",
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center",
           padding: "16px",
         }}
       >

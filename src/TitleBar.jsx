@@ -4,7 +4,12 @@ import minusIcon from "./assets/minus.svg";
 import maximizeIcon from "./assets/maximize-2.svg";
 import xIcon from "./assets/x.svg";
 
-export default function TitleBar({ icon, title = "Window", moveHandler }) {
+export default function TitleBar({
+  icon,
+  title = "Window",
+  handleMouseDown,
+  handleMouseMove,
+}) {
   return (
     <div
       className="title-bar"
@@ -16,8 +21,10 @@ export default function TitleBar({ icon, title = "Window", moveHandler }) {
         padding: "8px",
         borderTopLeftRadius: "8px",
         borderTopRightRadius: "8px",
+        userSelect: "none",
       }}
-      onMouseMove={moveHandler}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
     >
       <div
         className="favicon"
