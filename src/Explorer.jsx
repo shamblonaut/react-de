@@ -2,40 +2,40 @@ import { useState } from "react";
 import EntryList from "./EntryList";
 import EntrySearch from "./EntrySearch";
 
-export default function Explorer() {
-  const entries = [
-    {
-      id: crypto.randomUUID(),
-      name: "node_modules",
-      type: "folder",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "public",
-      type: "folder",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "src",
-      type: "folder",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "README.md",
-      type: "file",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "package.json",
-      type: "file",
-    },
-    {
-      id: crypto.randomUUID(),
-      name: "index.html",
-      type: "file",
-    },
-  ];
+const entries = [
+  {
+    id: crypto.randomUUID(),
+    name: "node_modules",
+    type: "folder",
+  },
+  {
+    id: crypto.randomUUID(),
+    name: "public",
+    type: "folder",
+  },
+  {
+    id: crypto.randomUUID(),
+    name: "src",
+    type: "folder",
+  },
+  {
+    id: crypto.randomUUID(),
+    name: "README.md",
+    type: "file",
+  },
+  {
+    id: crypto.randomUUID(),
+    name: "package.json",
+    type: "file",
+  },
+  {
+    id: crypto.randomUUID(),
+    name: "index.html",
+    type: "file",
+  },
+];
 
+export default function Explorer() {
   const [query, setQuery] = useState("");
 
   return (

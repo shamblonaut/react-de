@@ -1,6 +1,6 @@
-# React Window Manager
+# React Desktop Environment
 
-A simple window manager built with React
+A simple desktop environment built with React
 
 ## Credits
 

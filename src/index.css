@@ -98,3 +98,7 @@ input {
 input:focus {
   outline: none;
 }
+
+ul {
+  padding: 0;
+}

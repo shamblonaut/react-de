@@ -2,18 +2,21 @@ import { useRef, useState } from "react";
 import TitleBar from "./TitleBar";
 import WindowContent from "./WindowContent";
 
-export default function Window({ title, icon, isMouseUp, children }) {
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+export default function Window({
+  title,
+  icon,
+  minimized,
+  initialPosition = { x: 100, y: 100 },
+  isMouseUp,
+  children,
+}) {
+  const [position, setPosition] = useState(initialPosition);
 
-  const [isMoving, setIsMoving] = useState(false);
+  const isMoving = useRef(false);
   const moveStartPosition = useRef({
     x: undefined,
     y: undefined,
   });
-
-  if (isMouseUp && isMoving) {
-    setIsMoving(false);
-  }
 
   return (
     <div
@@ -26,7 +29,7 @@ export default function Window({ title, icon, isMouseUp, children }) {
         height: "600px",
         backgroundColor: "#11111b",
         borderRadius: "8px",
-        display: "flex",
+        display: minimized ? "none" : "flex",
         flexDirection: "column",
       }}
     >
@@ -34,14 +37,14 @@ export default function Window({ title, icon, isMouseUp, children }) {
         icon={icon}
         title={title}
         handleMouseDown={(event) => {
-          setIsMoving(true);
+          isMoving.current = true;
           moveStartPosition.current = {
             x: event.clientX - position.x,
             y: event.clientY - position.y,
           };
         }}
         handleMouseMove={(event) => {
-          if (!isMoving) return;
+          if (isMouseUp || !isMoving.current) return;
 
           setPosition({
             x: event.clientX - moveStartPosition.current.x,
