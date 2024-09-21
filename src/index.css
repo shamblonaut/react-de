@@ -4,13 +4,15 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #cdd6f4;
+  background-color: #1e1e2e;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color: #cdd6f4;
 }
 
 /*
@@ -87,4 +89,12 @@ h6 {
   display: flex;
   min-width: 320px;
   min-height: 100vh;
+}
+
+input {
+  color: var(--color);
+}
+
+input:focus {
+  outline: none;
 }

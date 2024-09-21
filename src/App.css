@@ -3,3 +3,8 @@
   height: 100vh;
   position: relative;
 }
+
+.icon {
+  filter: invert(82%) sepia(24%) saturate(246%) hue-rotate(190deg)
+    brightness(101%) contrast(91%);
+}

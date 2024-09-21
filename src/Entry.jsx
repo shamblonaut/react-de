@@ -29,8 +29,6 @@ export default function Entry({ entry }) {
         style={{
           width: "48px",
           height: "auto",
-          filter:
-            "invert(99%) sepia(88%) saturate(43%) hue-rotate(205deg) brightness(117%) contrast(100%)",
         }}
       />
       <p>{entry.name}</p>

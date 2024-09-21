@@ -1,4 +1,6 @@
-import Entry from "./Entry";
+import { useState } from "react";
+import EntryList from "./EntryList";
+import EntrySearch from "./EntrySearch";
 
 export default function Explorer() {
   const entries = [
@@ -34,39 +36,26 @@ export default function Explorer() {
     },
   ];
 
-  if (entries.length === 0) {
-    return (
-      <div
-        className="explorer"
-        style={{
-          flex: "1",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "16px",
-        }}
-      >
-        <p>No entries found</p>
-      </div>
-    );
-  }
+  const [query, setQuery] = useState("");
 
   return (
     <div
       className="explorer"
       style={{
         flex: "1",
-        display: "grid",
-        width: "100%",
-        gridTemplateColumns: "repeat(auto-fit, 100px)",
-        gridTemplateRows: "repeat(auto-fit, 100px)",
-        gap: "8px",
-        padding: "16px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {entries.map((entry) => {
-        return <Entry key={entry.id} entry={entry} />;
-      })}
+      <EntrySearch
+        query={query}
+        updateHandler={(event) => setQuery(event.target.value)}
+      />
+      <EntryList entries={getFilteredEntries(entries, query)} />
     </div>
   );
+}
+
+function getFilteredEntries(entries, query) {
+  return entries.filter((entry) => entry.name.includes(query));
 }
