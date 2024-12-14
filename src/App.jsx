@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 import "./App.css";
-import Explorer from "./Explorer";
-import Window from "./Window";
-import Taskbar from "./Taskbar";
+import Explorer from "./components/Explorer";
+import Window from "./components/Window";
+import Taskbar from "./components/Taskbar";
 
 import explorerIcon from "./assets/explorer.svg";
 

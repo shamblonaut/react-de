@@ -1,5 +1,5 @@
-import fileIcon from "./assets/file.svg";
-import folderIcon from "./assets/folder.svg";
+import fileIcon from "../assets/file.svg";
+import folderIcon from "../assets/folder.svg";
 
 function getEntryIcon(type) {
   switch (type) {

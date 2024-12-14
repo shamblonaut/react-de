@@ -1,4 +1,4 @@
-import searchIcon from "./assets/search.svg";
+import searchIcon from "../assets/search.svg";
 
 export default function EntrySearch({ query, updateHandler }) {
   return (

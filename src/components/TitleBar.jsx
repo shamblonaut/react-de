@@ -1,8 +1,8 @@
 import ActionButton from "./ActionButton";
 
-import minusIcon from "./assets/minus.svg";
-import maximizeIcon from "./assets/maximize-2.svg";
-import xIcon from "./assets/x.svg";
+import minusIcon from "../assets/minus.svg";
+import maximizeIcon from "../assets/maximize-2.svg";
+import xIcon from "../assets/x.svg";
 
 export default function TitleBar({
   icon,
