@@ -57,5 +57,5 @@ export default function Explorer() {
 }
 
 function getFilteredEntries(entries, query) {
-  return entries.filter((entry) => entry.name.includes(query));
+  return entries.filter((entry) => entry.name.toLowerCase().includes(query.toLowerCase()));
 }
